@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.modelContext) private var context
     var body: some View {
         NavigationStack{
             ZStack{
@@ -19,7 +20,6 @@ struct ContentView: View {
                     }
                     .padding()
                     NavigationLink("Build Your Dreams"){
-                        
                     }
                     NavigationLink("Dream Records"){
                         DreamRecord()
@@ -33,10 +33,7 @@ struct ContentView: View {
 }
 
 
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }
+

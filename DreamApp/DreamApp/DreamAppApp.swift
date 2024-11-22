@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct DreamAppApp: App {
@@ -13,5 +14,6 @@ struct DreamAppApp: App {
         WindowGroup {
             ContentView()
         }
+            .modelContainer(for: DreamEntry.self)
     }
 }

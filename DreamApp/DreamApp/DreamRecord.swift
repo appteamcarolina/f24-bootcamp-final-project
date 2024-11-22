@@ -6,21 +6,45 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct DreamRecord: View {
+    @Query var entries: [DreamEntry]
+    @State private var dataUpdated = false
+    
+    @State var SampleEntries = [DreamEntry(Content: "Test1", EntryDate: Date(), Mood: "Happy"), DreamEntry(Content: "Test2", EntryDate: Date(), Mood: "Sad"),DreamEntry(Content: "Test3", EntryDate: Date(), Mood: "Excited")]
+    
     var body: some View {
-        DreamView()
-    }
-}
-
+        ZStack{
+            Color("DreamInput")
+                .ignoresSafeArea()
+            VStack{
+                ScrollView{
+                    ForEach(SampleEntries,id:\.self){ entryDream in
+                        Section{
+                            DreamView(entry: entryDream)
+                        }
+                    }
+                }
+            }
+        }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+            ForEach(entries,id:\.self){ entryDream in
+                    DreamView(entry: entryDream)
+                }
+            .onAppear {
+                       print(entries) // Debug entries being fetched
+                   }
+        
+        
+        
+            }
+        }
 
 struct DreamView: View {
-    
-    //@Query var entry: DreamEntry
+    @Bindable var entry: DreamEntry
     //Change all temp to Query
-    @State var tempFill = Date()
-    @State var tempFill1 = ""
-    @State var tempFill2 = ""
     let Moods = ["Depressed","Sad","Calm","Happy","Excited"]
     var body: some View {
         ZStack{
@@ -29,8 +53,8 @@ struct DreamView: View {
             VStack{
                 HStack{
                     Spacer()
-                    DatePicker("",selection: $tempFill, displayedComponents: .date)
-                    Picker("Mood from data", selection:$tempFill1){//entry.Mood){
+                    DatePicker("",selection: $entry.EntryDate, displayedComponents: .date)
+                    Picker("Mood from data", selection: $entry.Mood){
                         ForEach(Moods, id: \.self){ mood in
                             Text(mood)
                         }
@@ -39,17 +63,16 @@ struct DreamView: View {
                     Spacer()
                         .padding(.trailing, 10)
                 }
-                TextField("",text: $tempFill2, axis:.vertical)
+                TextField("",text: $entry.Content, axis:.vertical)
                     .lineLimit(10, reservesSpace: true)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 360)
-            }
+        }
         }
     }
 }
 
-struct DreamRecord_Previews: PreviewProvider {
-    static var previews: some View {
-        DreamRecord()
-    }
+#Preview{
+    DreamRecord()
+        .modelContainer(for: DreamEntry.self)
 }
