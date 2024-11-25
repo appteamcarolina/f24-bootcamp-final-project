@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  DreamApp
+//  Dream
 //
 //  Created by Yahan Yang on 11/20/24.
 //
@@ -20,6 +20,8 @@ struct ContentView: View {
                     }
                     .padding()
                     NavigationLink("Build Your Dreams"){
+                        BuildDream()
+                        
                     }
                     NavigationLink("Dream Records"){
                         DreamRecord()

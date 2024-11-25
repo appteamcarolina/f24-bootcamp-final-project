@@ -14,6 +14,9 @@
 		8A9156E92CEE4812007EAD4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9156E82CEE4812007EAD4B /* Assets.xcassets */; };
 		8A9156EC2CEE4812007EAD4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A9156EB2CEE4812007EAD4B /* Preview Assets.xcassets */; };
 		8A9156F32CEE48A2007EAD4B /* DreamEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9156F22CEE48A2007EAD4B /* DreamEntry.swift */; };
+		8AF1928B2CF4397E00C6DB4E /* UseAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1928A2CF4397E00C6DB4E /* UseAI.swift */; };
+		8AF1928E2CF43B6900C6DB4E /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8AF1928D2CF43B6900C6DB4E /* OpenAIKit */; };
+		8AF192902CF43B9200C6DB4E /* BuildDream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1928F2CF43B9200C6DB4E /* BuildDream.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,8 @@
 		8A9156E82CEE4812007EAD4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A9156EB2CEE4812007EAD4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A9156F22CEE48A2007EAD4B /* DreamEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamEntry.swift; sourceTree = "<group>"; };
+		8AF1928A2CF4397E00C6DB4E /* UseAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseAI.swift; sourceTree = "<group>"; };
+		8AF1928F2CF43B9200C6DB4E /* BuildDream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildDream.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF1928E2CF43B6900C6DB4E /* OpenAIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +68,8 @@
 				8A9156E62CEE4810007EAD4B /* ContentView.swift */,
 				8A0AC20D2CEE78D700671CC8 /* DreamRecord.swift */,
 				8A0AC20B2CEE4BF500671CC8 /* AddDream.swift */,
+				8AF1928A2CF4397E00C6DB4E /* UseAI.swift */,
+				8AF1928F2CF43B9200C6DB4E /* BuildDream.swift */,
 				8A9156E82CEE4812007EAD4B /* Assets.xcassets */,
 				8A9156EA2CEE4812007EAD4B /* Preview Content */,
 			);
@@ -120,6 +128,9 @@
 				Base,
 			);
 			mainGroup = 8A9156D82CEE4810007EAD4B;
+			packageReferences = (
+				8AF1928C2CF43B6900C6DB4E /* XCRemoteSwiftPackageReference "OpenAIKit" */,
+			);
 			productRefGroup = 8A9156E22CEE4810007EAD4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -149,6 +160,8 @@
 				8A0AC20C2CEE4BF500671CC8 /* AddDream.swift in Sources */,
 				8A9156E72CEE4810007EAD4B /* ContentView.swift in Sources */,
 				8A0AC20E2CEE78D700671CC8 /* DreamRecord.swift in Sources */,
+				8AF1928B2CF4397E00C6DB4E /* UseAI.swift in Sources */,
+				8AF192902CF43B9200C6DB4E /* BuildDream.swift in Sources */,
 				8A9156E52CEE4810007EAD4B /* DreamAppApp.swift in Sources */,
 				8A9156F32CEE48A2007EAD4B /* DreamEntry.swift in Sources */,
 			);
@@ -355,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8AF1928C2CF43B6900C6DB4E /* XCRemoteSwiftPackageReference "OpenAIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MarcoDotIO/OpenAIKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8AF1928D2CF43B6900C6DB4E /* OpenAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AF1928C2CF43B6900C6DB4E /* XCRemoteSwiftPackageReference "OpenAIKit" */;
+			productName = OpenAIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8A9156D92CEE4810007EAD4B /* Project object */;
 }

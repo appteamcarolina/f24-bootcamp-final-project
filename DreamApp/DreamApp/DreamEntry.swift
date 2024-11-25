@@ -1,6 +1,6 @@
 //
 //  DreamEntry.swift
-//  DreamApp
+//  Dream
 //
 //  Created by Yahan Yang on 11/20/24.
 //

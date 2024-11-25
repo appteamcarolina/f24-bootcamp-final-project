@@ -1,6 +1,6 @@
 //
 //  DreamRecord.swift
-//  DreamApp
+//  Dream
 //
 //  Created by Yahan Yang on 11/20/24.
 //
@@ -12,7 +12,7 @@ struct DreamRecord: View {
     @Query var entries: [DreamEntry]
     @State private var dataUpdated = false
     
-    @State var SampleEntries = [DreamEntry(Content: "Test1", EntryDate: Date(), Mood: "Happy"), DreamEntry(Content: "Test2", EntryDate: Date(), Mood: "Sad"),DreamEntry(Content: "Test3", EntryDate: Date(), Mood: "Excited")]
+    @State var SampleEntries = [DreamEntry(Content: "Test1", EntryDate: Date(), Mood: "Happy"), DreamEntry(Content: "Test2", EntryDate: Date(), Mood: "Sad"),DreamEntry(Content: "Test3", EntryDate: Date(), Mood: "Excited"), DreamEntry(Content: "Test4", EntryDate: Date(), Mood: "Happy")]
     
     var body: some View {
         ZStack{
@@ -25,23 +25,21 @@ struct DreamRecord: View {
                             DreamView(entry: entryDream)
                         }
                     }
+                    /*
+                    ForEach(entries,id:\.self){ entryDream in
+                        Section{
+                        DreamView(entry: entryDream)
+                        }
+                }
+                .onAppear {
+                    print(entries) // Debug entries being fetched
+                    }
+                    */
                 }
             }
         }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
-            ForEach(entries,id:\.self){ entryDream in
-                    DreamView(entry: entryDream)
-                }
-            .onAppear {
-                       print(entries) // Debug entries being fetched
-                   }
-        
-        
-        
-            }
-        }
-
+    }
+}
 struct DreamView: View {
     @Bindable var entry: DreamEntry
     //Change all temp to Query
