@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 import OpenAIKit
 
-let MyapiKey = "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"
+let MyapiKey = ""
 
 let openAI = OpenAI(Configuration(organizationId: "Personal", apiKey: MyapiKey))
 
