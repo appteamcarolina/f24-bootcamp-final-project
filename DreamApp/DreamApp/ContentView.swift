@@ -12,20 +12,39 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             ZStack{
-                Color("DreamInput")
+                AngularGradient(colors: [Color("Color2"),Color("Color1"), Color("DreamInput"),Color("Color1"),Color("DreamInput"),Color("Color1"),Color("Color2"),Color("DreamInput"),Color("Color1")], center: .center)
                     .ignoresSafeArea()
                 VStack{
-                    NavigationLink("Log Your Dreams"){
+                    Spacer()
+                    NavigationLink("Write"){
                         AddDream()
                     }
+                    .buttonStyle(.bordered)
+                    .foregroundColor(.white)
+                    .background(Color.clear)
+                    .cornerRadius(15)
+                    .font(.title)
                     .padding()
-                    NavigationLink("Build Your Dreams"){
+                    .padding(.bottom, 35)
+                    NavigationLink("Build"){
                         BuildDream()
-                        
                     }
-                    NavigationLink("Dream Records"){
+                    .buttonStyle(.bordered)
+                    .foregroundColor(.white)
+                    .background(Color.clear)
+                    .cornerRadius(15)
+                    .font(.title)
+                    NavigationLink("Dreams"){
                         DreamRecord()
-                    }.padding()
+                    }
+                    .buttonStyle(.bordered)
+                    .foregroundColor(.white)
+                    .background(Color.clear)
+                    .cornerRadius(15)
+                    .font(.title)
+                    .padding()
+                    .padding(.top, 35)
+                    Spacer()
                 }
                 .foregroundColor(.black)
                 .fontWeight(.heavy)

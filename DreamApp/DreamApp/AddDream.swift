@@ -22,11 +22,11 @@ struct AddDream: View {
     var body: some View {
         NavigationStack{
             ZStack{
-                Color("DreamInput")
+                AngularGradient(colors: [Color("Color3"),Color("Color1"), Color("Color2"),Color("ButtonColor"),Color("DreamInput"),Color("Color1"),Color("Color2"),Color("Color3")], center: .bottomTrailing)
                     .ignoresSafeArea()
                 VStack{
                     Form{
-                        Section("Write Your Dreams"){
+                        Section(""){
                             TextField("", text: $InputDream, axis: .vertical)
                                 .lineLimit(10, reservesSpace: true)
                                 .textFieldStyle(.roundedBorder)
@@ -38,7 +38,7 @@ struct AddDream: View {
                             }.pickerStyle(.segmented)
                         }.foregroundColor(.black)
                     }
-                    .navigationTitle("Dream")
+                    .navigationTitle("Record Your Dreams")
                     .navigationBarTitleDisplayMode(.inline)
                     
                     //SUBMIT BUTTON
