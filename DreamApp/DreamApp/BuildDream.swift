@@ -38,11 +38,14 @@ struct BuildDream: View {
                         .foregroundColor(.white)
                         
                 }
-                .padding(.top, 25)
-                Text("\(Summary)")
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-                    .padding(20)
+                .padding(.top, 260)
+                ScrollView
+                {
+                    Text("\(Summary)")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .padding(20)
+                }
             }
         }
     }
